@@ -32,12 +32,6 @@ export interface AudienceTab {
   filter: (testers: Tester[]) => Tester[];
 }
 
-export interface DynamicVariable {
-  key: string;
-  label: string;
-  description: string;
-  example: string;
-}
 
 export interface BroadcastMessage {
   id?: string;

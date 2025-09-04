@@ -172,35 +172,3 @@ export const audienceTabs: AudienceTab[] = [
   }
 ];
 
-export const dynamicVariables: DynamicVariable[] = [
-  {
-    key: '{TesterName}',
-    label: 'Tester Name',
-    description: 'The name of the individual tester',
-    example: 'Anna Schmidt'
-  },
-  {
-    key: '{TestCycleName}',
-    label: 'Test Cycle Name',
-    description: 'The name of the current test cycle',
-    example: 'BVG Mobile App Testing'
-  },
-  {
-    key: '{TestCycleID}',
-    label: 'Test Cycle ID',
-    description: 'The unique identifier of the test cycle',
-    example: 'cycle-001'
-  },
-  {
-    key: '{TLName}',
-    label: 'Test Lead Name',
-    description: 'The name of the test lead',
-    example: 'Markus Schmidt'
-  },
-  {
-    key: '{CustomFields}',
-    label: 'Custom Fields',
-    description: 'Access to custom tester fields (future feature)',
-    example: 'Location: Berlin, Experience: 5 years'
-  }
-];

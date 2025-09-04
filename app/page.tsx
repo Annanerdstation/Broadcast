@@ -4,14 +4,12 @@ import { useState } from 'react';
 import { Send, Save, Eye, Users, MessageSquare } from 'lucide-react';
 import AudienceTabs from '@/components/AudienceTabs';
 import RichTextEditor from '@/components/RichTextEditor';
-import PersonalizationPanel from '@/components/PersonalizationPanel';
 import MessageTemplates from '@/components/MessageTemplates';
 import { 
   mockTesters, 
   mockTestCycle, 
   mockMessageTemplates, 
   audienceTabs, 
-  dynamicVariables 
 } from '@/data/mockData';
 import { MessageTemplate, BroadcastMessage } from '@/types';
 
@@ -27,11 +25,6 @@ export default function BroadcastPage() {
     setMessageContent(template.content);
   };
 
-  const handleVariableInsert = (variable: string) => {
-    // Insert variable at cursor position in the editor
-    // For now, we'll append it to the content
-    setMessageContent(prev => prev + variable);
-  };
 
   const handleSendMessage = () => {
     const selectedTesters = audienceTabs
@@ -116,11 +109,6 @@ export default function BroadcastPage() {
               onTemplateSelect={handleTemplateSelect}
             />
             
-            <PersonalizationPanel
-              variables={dynamicVariables}
-              testCycle={mockTestCycle}
-              onVariableInsert={handleVariableInsert}
-            />
           </div>
 
           {/* Main Content */}
