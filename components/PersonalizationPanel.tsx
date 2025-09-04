@@ -96,7 +96,7 @@ export default function PersonalizationPanel({
                 <p className="font-medium mb-1">How it works:</p>
                 <ul className="space-y-1 text-blue-700">
                   <li>• Variables are replaced with actual values for each tester</li>
-                  <li>• {TesterName} will show each tester's individual name</li>
+                  <li>• {'{TesterName}'} will show each tester's individual name</li>
                   <li>• Test cycle and TL information is automatically populated</li>
                   <li>• Custom fields support is coming soon</li>
                 </ul>
