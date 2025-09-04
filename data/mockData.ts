@@ -53,8 +53,8 @@ export const mockTesters: Tester[] = [
 
 export const mockTestCycle: TestCycle = {
   id: 'cycle-001',
-  name: 'BVG Mobile App Testing',
-  description: 'Comprehensive testing of the BVG mobile application including exploratory and usability testing',
+  name: 'Mobile App Testing',
+  description: 'Comprehensive testing of the mobile application including exploratory and usability testing',
   status: 'active',
   createdAt: new Date('2024-01-10'),
   testLeadName: 'Markus Schmidt'
@@ -70,7 +70,7 @@ export const mockMessageTemplates: MessageTemplate[] = [
 We noticed you haven't joined the {TestCycleName} yet. This is a great opportunity to contribute to an important testing project.
 
 **What's involved:**
-• Exploratory testing of the BVG mobile app
+• Exploratory testing of the mobile app
 • Usability testing sessions
 • Flexible participation - test in any order you prefer
 
