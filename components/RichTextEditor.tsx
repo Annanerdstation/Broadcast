@@ -56,6 +56,7 @@ export default function RichTextEditor({
         placeholder,
       },
     },
+    immediatelyRender: false,
   });
 
   const addLink = () => {
