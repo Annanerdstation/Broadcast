@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { Send, Save, Eye, Users, MessageSquare } from 'lucide-react';
+import { Send, Save, Eye, Users, MessageSquare, ChevronDown, ChevronRight } from 'lucide-react';
 import AudienceTabs from '@/components/AudienceTabs';
 import RichTextEditor from '@/components/RichTextEditor';
 import MessageTemplates from '@/components/MessageTemplates';
@@ -18,6 +18,7 @@ export default function BroadcastPage() {
   const [messageTitle, setMessageTitle] = useState('');
   const [messageContent, setMessageContent] = useState('');
   const [selectedTemplate, setSelectedTemplate] = useState<MessageTemplate | null>(null);
+  const [isAudienceExpanded, setIsAudienceExpanded] = useState(true);
 
   const handleTemplateSelect = (template: MessageTemplate) => {
     setSelectedTemplate(template);
@@ -105,16 +106,31 @@ export default function BroadcastPage() {
           {/* Main Content */}
           <div className="lg:col-span-2 space-y-6">
             {/* Audience Selection */}
-            <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-gray-900 mb-4">
-                Select Audience
-              </h2>
-              <AudienceTabs
-                tabs={audienceTabs}
-                testers={mockTesters}
-                selectedTab={selectedAudience}
-                onTabChange={setSelectedAudience}
-              />
+            <div className="bg-white rounded-lg shadow-sm border border-gray-200">
+              <button
+                onClick={() => setIsAudienceExpanded(!isAudienceExpanded)}
+                className="w-full flex items-center justify-between p-6 text-left hover:bg-gray-50 transition-colors"
+              >
+                <h2 className="text-lg font-semibold text-gray-900">
+                  Select Audience
+                </h2>
+                {isAudienceExpanded ? (
+                  <ChevronDown size={20} className="text-gray-500" />
+                ) : (
+                  <ChevronRight size={20} className="text-gray-500" />
+                )}
+              </button>
+              
+              {isAudienceExpanded && (
+                <div className="px-6 pb-6">
+                  <AudienceTabs
+                    tabs={audienceTabs}
+                    testers={mockTesters}
+                    selectedTab={selectedAudience}
+                    onTabChange={setSelectedAudience}
+                  />
+                </div>
+              )}
             </div>
 
             {/* Message Editor */}
