@@ -1,4 +1,4 @@
-import { Tester, TestCycle, MessageTemplate, AudienceTab, DynamicVariable } from '@/types';
+import { Tester, TestCycle, MessageTemplate, AudienceTab } from '@/types';
 
 export const mockTesters: Tester[] = [
   {
